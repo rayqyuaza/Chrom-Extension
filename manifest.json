@@ -1,0 +1,33 @@
+{
+    "manifest_version": 1,
+    "name": "Debate assistant",
+    "version": "1.0.0",
+    "description": "A Chrome extension to help debate students research and prepare arguments",
+    "Permissions": [
+        "activeTab",
+        "scription",
+        "storage"
+    ],
+    "action": {
+        "defualt_popup": "popup.html",
+        "default_title": "Debate Assistant"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["library.html", "library.js"],
+            "matches": ["<all_urls>"]
+        }
+    ]
+}
+
+
+
