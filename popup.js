@@ -23,3 +23,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentSelectedTags = [];
 
+   highlightTab.addEventListener('click', () => {
+    highlightTab.classList.add('active');
+    evidenceTab.classList.remove('active');
+    highlightContent.classList.add('active');
+    evidenceContent.classList.remove('active');
+  });
+
+  evidenceTab.addEventListener('click', () => {
+    evidenceTab.classList.add('active');
+    highlightTab.classList.remove('active');
+    evidenceContent.classList.add('active');
+    highlightContent.classList.remove('active');
+    loadSavedEvidence();
+  });
+
